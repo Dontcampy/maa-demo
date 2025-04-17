@@ -1,11 +1,739 @@
 {
-    "MyTask1": {},
-    "MyTask2": {},
-    "MyTask3": {},
-    "MyTask4": {
+    "press_start_menu": {
+        "recognition": "OCR",
+        "expected": "选单",
+        "action": "Click",
+        "next": [
+            "delete_data"
+        ]
+    },
+    "delete_data": {
+        "recognition": "OCR",
+        "expected": "删除使用者数据",
+        "action": "Click",
+        "next": [
+            "agree_delete_data"
+        ]
+    },
+    "agree_delete_data": {
+        "recognition": "OCR",
+        "expected": "同意上述事项",
+        "action": "Click",
+        "next": [
+            "confirm_delete_data"
+        ]
+    },
+    "confirm_delete_data": {
+        "recognition": "TemplateMatch",
+        "template": "confirm_delete_data_732_551_65_33__682_501_165_133.png",
+        "roi": [
+            732,
+            551,
+            65,
+            33
+        ],
+        "action": "Click",
+        "next": [
+            "close_delete_data"
+        ]
+    },
+    "close_delete_data": {
+        "recognition": "OCR",
+        "expected": "关闭",
+        "action": "Click",
+        "next": [
+            "start_game"
+        ]
+    },
+    "start_game": {
+        "recognition": "OCR",
+        "expected": "TAP TO START",
+        "action": "Click",
+        "next": [
+            "agree_agreement"
+        ]
+    },
+    "agree_agreement": {
+        "recognition": "TemplateMatch",
+        "template": "agree_agreement_737_551_57_32__687_501_157_132.png",
+        "roi": [
+            737,
+            551,
+            57,
+            32
+        ],
+        "action": "Click",
+        "next": [
+            "decline_data_collection"
+        ]
+    },
+    "decline_data_collection": {
+        "recognition": "TemplateMatch",
+        "template": "decline_data_collection_340_648_98_33__290_587_198_133.png",
+        "roi": [
+            340,
+            648,
+            98,
+            33
+        ],
+        "action": "Click",
+        "next": [
+            "confirm_graphics",
+            "is_tutorial"
+        ]
+    },
+    "confirm_graphics": {
+        "recognition": "TemplateMatch",
+        "template": "confirm_graphics_618_554_43_28__568_504_143_128.png",
+        "roi": [
+            618,
+            554,
+            43,
+            28
+        ],
+        "action": "Click"
+    },
+    "is_tutorial": {
+        "recognition": "TemplateMatch",
+        "template": "is_tutorial_384_138_507_377__334_88_607_477.png",
+        "roi": [
+            384,
+            138,
+            507,
+            377
+        ],
+        "next": [
+            "skip_tutorial"
+        ]
+    },
+    "skip_tutorial": {
+        "recognition": "OCR",
+        "expected": "略过",
+        "action": "Click",
+        "next": [
+            "click_input_name"
+        ]
+    },
+    "click_input_name": {
+        "recognition": "TemplateMatch",
+        "template": "input_name_575_270_147_35__525_220_247_135.png",
+        "roi": [
+            575,
+            270,
+            147,
+            35
+        ],
+        "action": "Click",
+        "next": [
+            "input_name"
+        ]
+    },
+    "input_name": {
+        "recognition": "DirectHit",
+        "action": "InputText",
+        "input_text": "2887",
+        "next": [
+            "confirm_name"
+        ]
+    },
+    "confirm_name": {
+        "recognition": "OCR",
+        "expected": "执行",
+        "roi": [
+            614,
+            510,
+            51,
+            34
+        ],
+        "action": "Click",
+        "next": [
+            "confirm_name_2"
+        ]
+    },
+    "confirm_name_2": {
+        "recognition": "OCR",
+        "expected": "是",
+        "roi": [
+            749,
+            512,
+            31,
+            28
+        ],
+        "action": "Click",
+        "next": [
+            "skip_newbee_event_anime",
+            "tap_newbee_event"
+        ]
+    },
+    "skip_newbee_event_anime": {
+        "recognition": "OCR",
+        "expected": "略过",
+        "roi": [
+            1144,
+            35,
+            54,
+            28
+        ],
+        "action": "Click",
+        "next": [
+            "tap_newbee_event"
+        ]
+    },
+    "tap_newbee_event": {
+        "recognition": "TemplateMatch",
+        "template": "tap_newbee_event_183_194_429_235__133_144_529_335.png",
+        "roi": [
+            183,
+            194,
+            429,
+            235
+        ],
+        "action": "Click",
+        "next": [
+            "tap_newbee_event",
+            "skip_login_event_anime"
+        ]
+    },
+    "skip_login_event_anime": {
+        "recognition": "OCR",
+        "expected": "略过",
+        "roi": [
+            1144,
+            35,
+            54,
+            28
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "tap_login_event"
+        ]
+    },
+    "tap_login_event": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            562,
+            667,
+            158,
+            37
+        ],
+        "next": [
+            "close_announcement"
+        ]
+    },
+    "close_announcement": {
+        "timeout": 60000,
+        "recognition": "OCR",
+        "expected": "关闭",
+        "action": "Click",
+        "post_wait_freezes": 20000,
+        "next": [
+            "click_tutorial_1"
+        ]
+    },
+    "click_tutorial_1": {
+        "recognition": "OCR",
+        "expected": "这是板块使命",
+        "roi": [
+            402,
+            326,
+            153,
+            35
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "click_tutorial_2"
+        ]
+    },
+    "click_tutorial_2": {
+        "recognition": "OCR",
+        "expected": "逐步完成使命",
+        "roi": [
+            403,
+            293,
+            151,
+            34
+        ],
+        "action": "Click",
+        "post_wait_freezes": 5000,
+        "next": [
+            "click_starter_duty"
+        ]
+    },
+    "click_starter_duty": {
+        "recognition": "TemplateMatch",
+        "template": "click_starter_duty_24_147_159_70__0_97_259_170.png",
+        "roi": [
+            24,
+            147,
+            159,
+            70
+        ],
+        "action": "Click",
+        "next": [
+            "skip_starter_duty_tutorial"
+        ]
+    },
+    "skip_starter_duty_tutorial": {
+        "recognition": "OCR",
+        "expected": "OK",
+        "roi": [
+            619,
+            647,
+            44,
+            33
+        ],
+        "pre_wait_freezes": 1000,
+        "action": "Click",
+        "next": [
+            "close_starter_duty"
+        ]
+    },
+    "get_all_starter_duty": {
+        "recognition": "OCR",
+        "expected": "全部领取",
+        "action": "Click",
+        "next": [
+            "confirm_get_all_starter_duty"
+        ]
+    },
+    "confirm_get_all_starter_duty": {
+        "recognition": "OCR",
+        "expected": "OK",
+        "action": "Click",
+        "next": [
+            "close_starter_duty"
+        ]
+    },
+    "close_starter_duty": {
+        "recognition": "OCR",
+        "expected": "关闭",
+        "action": "Click",
+        "next": [
+            "open_gift"
+        ]
+    },
+    "open_gift": {
+        "recognition": "OCR",
+        "expected": "礼物",
+        "roi": [
+            58,
+            395,
+            38,
+            23
+        ],
+        "action": "Click",
+        "next": [
+            "close_gift_announcement",
+            "get_all_gifts"
+        ]
+    },
+    "close_gift_announcement": {
+        "recognition": "OCR",
+        "expected": "关闭",
+        "roi": [
+            609,
+            646,
+            63,
+            35
+        ],
+        "pre_wait_freezes": 1000,
+        "action": "Click",
+        "next": [
+            "open_gift_2",
+            "get_all_gifts"
+        ]
+    },
+    "open_gift_2": {
+        "recognition": "OCR",
+        "expected": "礼物",
+        "roi": [
+            58,
+            395,
+            38,
+            23
+        ],
+        "action": "Click",
+        "next": [
+            "get_all_gifts"
+        ]
+    },
+    "get_all_gifts": {
+        "recognition": "OCR",
+        "expected": "全部领取",
+        "roi": [
+            715,
+            648,
+            100,
+            30
+        ],
+        "pre_wait_freezes": 1000,
+        "action": "Click",
+        "next": [
+            "skip_gift_anime",
+            "confirm_gifts"
+        ]
+    },
+    "skip_gift_anime": {
+        "pre_delay": 6000,
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            563,
+            667,
+            52,
+            37
+        ],
+        "next": [
+            "confirm_gifts"
+        ]
+    },
+    "confirm_gifts": {
+        "recognition": "OCR",
+        "expected": "OK",
+        "roi": [
+            617,
+            649,
+            46,
+            31
+        ],
+        "action": "Click",
+        "next": [
+            "close_gifts"
+        ]
+    },
+    "close_gifts": {
+        "recognition": "OCR",
+        "expected": "关闭",
+        "roi": [
+            487,
+            650,
+            56,
+            31
+        ],
+        "action": "Click",
+        "next": [
+            "open_gacha"
+        ]
+    },
+    "open_gacha": {
+        "recognition": "OCR",
+        "expected": "机体补给",
+        "roi": [
+            989,
+            672,
+            89,
+            32
+        ],
+        "action": "Click",
+        "next": [
+            "select_gacha"
+        ]
+    },
+    "select_gacha": {
+        "recognition": "TemplateMatch",
+        "template": "select_gacha_42_195_176_66__0_145_276_166.png",
+        "roi": [
+            42,
+            195,
+            176,
+            66
+        ],
+        "action": "Click",
+        "next": [
+            "gacha"
+        ]
+    },
+    "gacha": {
+        "recognition": "OCR",
+        "expected": "补给10次",
+        "roi": [
+            1069,
+            540,
+            99,
+            27
+        ],
+        "action": "Click",
+        "next": [
+            "confirm_gacha"
+        ]
+    },
+    "confirm_gacha": {
+        "recognition": "OCR",
+        "expected": "机体补给",
+        "roi": [
+            718,
+            551,
+            97,
+            33
+        ],
+        "action": "Click",
+        "next": [
+            "skip_gacha_anime"
+        ]
+    },
+    "skip_gacha_anime": {
+        "recognition": "OCR",
+        "expected": "略过",
+        "roi": [
+            1144,
+            35,
+            54,
+            28
+        ],
+        "action": "Click",
+        "next": [
+            "skip_gacha_anime",
+            "continue_gacha",
+            "stop_gacha"
+        ]
+    },
+    "continue_gacha": {
+        "recognition": "OCR",
+        "expected": "补给1次",
+        "roi": [
+            1102,
+            655,
+            87,
+            29
+        ],
+        "action": "Click",
+        "next": [
+            "confirm_gacha"
+        ]
+    },
+    "stop_gacha": {
+        "recognition": "OCR",
+        "expected": "OK",
+        "roi": [
+            1123,
+            656,
+            44,
+            28
+        ],
+        "action": "Click",
+        "next": [
+            "go_to_storage"
+        ]
+    },
+    "go_to_storage": {
+        "recognition": "OCR",
+        "expected": "强化",
+        "roi": [
+            280,
+            674,
+            47,
+            31
+        ],
+        "pre_wait_freezes": 1000,
+        "action": "Click",
+        "next": [
+            "close_storage_help_1",
+            "enter_unit_filter"
+        ]
+    },
+    "close_storage_help_1": {
+        "recognition": "OCR",
+        "expected": "继续",
+        "roi": [
+            614,
+            646,
+            52,
+            33
+        ],
+        "pre_wait_freezes": 1000,
+        "action": "Click",
+        "next": [
+            "close_storage_help_2"
+        ]
+    },
+    "close_storage_help_2": {
+        "recognition": "OCR",
+        "expected": "继续",
+        "roi": [
+            733,
+            646,
+            62,
+            34
+        ],
+        "action": "Click",
+        "next": [
+            "close_storage_help_3"
+        ]
+    },
+    "close_storage_help_3": {
+        "recognition": "OCR",
+        "expected": "OK",
+        "roi": [
+            733,
+            646,
+            62,
+            34
+        ],
+        "action": "Click",
+        "next": [
+            "enter_unit_filter"
+        ]
+    },
+    "enter_unit_filter": {
+        "recognition": "OCR",
+        "expected": "稀有度顺序",
+        "roi": [
+            973,
+            577,
+            105,
+            23
+        ],
+        "action": "Click",
+        "next": [
+            "filter_unit_ur"
+        ]
+    },
+    "filter_unit_ur": {
+        "recognition": "OCR",
+        "expected": "UR",
+        "roi": [
+            186,
+            458,
+            46,
+            43
+        ],
+        "action": "Click",
+        "next": [
+            "confirm_unit_filter"
+        ]
+    },
+    "confirm_unit_filter": {
+        "recognition": "OCR",
+        "expected": "确定",
+        "roi": [
+            734,
+            645,
+            63,
+            35
+        ],
+        "action": "Click",
+        "next": [
+            "go_to_ship"
+        ]
+    },
+    "go_to_ship": {
+        "recognition": "OCR",
+        "expected": "支援人员",
+        "roi": [
+            43,
+            454,
+            101,
+            47
+        ],
+        "action": "Click",
+        "next": [
+            "enter_ship_filter"
+        ]
+    },
+    "enter_ship_filter": {
+        "recognition": "OCR",
+        "expected": "稀有度顺序",
+        "roi": [
+            973,
+            577,
+            105,
+            23
+        ],
+        "action": "Click",
+        "next": [
+            "filter_ship_ur"
+        ]
+    },
+    "filter_ship_ur": {
+        "recognition": "OCR",
+        "expected": "UR",
+        "roi": [
+            186,
+            458,
+            46,
+            43
+        ],
+        "action": "Click",
+        "next": [
+            "confirm_ship_filter"
+        ]
+    },
+    "confirm_ship_filter": {
+        "recognition": "OCR",
+        "expected": "确定",
+        "roi": [
+            734,
+            645,
+            63,
+            35
+        ],
+        "action": "Click",
+        "post_wait_freezes": 2000,
+        "next": [
+            "collect_ur"
+        ]
+    },
+    "collect_ur": {
         "recognition": "Custom",
-        "custom_recognition": "my_reco_222",
-        "action": "Custom",
-        "custom_action": "my_action_111"
+        "custom_recognition": "ur_rcon",
+        "custom_recognition_param": {
+            "ur_count": 5
+        }
+    },
+    "open_menu": {
+        "recognition": "OCR",
+        "expected": "选单",
+        "roi": [
+            1183,
+            672,
+            44,
+            33
+        ],
+        "action": "Click",
+        "next": [
+            "return_home"
+        ]
+    },
+    "return_home": {
+        "recognition": "OCR",
+        "expected": "返回标题画面",
+        "roi": [
+            975,
+            484,
+            144,
+            36
+        ],
+        "action": "Click",
+        "next": [
+            "confirm_return_home"
+        ]
+    },
+    "confirm_return_home": {
+        "recognition": "OCR",
+        "expected": "执行",
+        "roi": [
+            737,
+            551,
+            55,
+            35
+        ],
+        "action": "Click",
+        "next": [
+            "press_start_menu"
+        ]
+    },
+    "test": {
+        "recognition": "TemplateMatch",
+        "template": "card/feature/unit.png",
+        "threshold": 0.8,
+        "roi": [
+            219,
+            88,
+            1014,
+            470
+        ]
     }
 }
