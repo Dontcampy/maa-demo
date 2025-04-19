@@ -714,13 +714,14 @@
     },
     "test": {
         "recognition": "TemplateMatch",
-        "template": "card/feature/unit.png",
-        "threshold": 0.8,
+        "template": "card/feature/lv1.png",
+        "threshold": 0.5,
         "roi": [
             219,
             88,
             1014,
             470
-        ]
+        ],
+        "green_mask": true
     }
 }

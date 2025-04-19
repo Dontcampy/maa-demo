@@ -48,8 +48,8 @@ class UrReco(CustomRecognition):
     ) -> CustomRecognition.AnalyzeResult:
         ship_rcon = {"ship_rcon":
                        {"recognition": "TemplateMatch",
-                        "template": "card/feature/ship.png",
-                        "threshold":0.7,
+                        "template": "card/feature/lv1.png",
+                        "threshold":0.5,
                         "roi": [219, 88, 1014, 470]
                         }
                    }
@@ -81,8 +81,8 @@ class UrReco(CustomRecognition):
 
         unit_rcon = {"unit_rcon":
                        {"recognition": "TemplateMatch",
-                        "template": "card/feature/unit.png",
-                        "threshold":0.7,
+                        "template": "card/feature/lv1.png",
+                        "threshold":0.5,
                         "roi": [219, 88, 1014, 470]
                         }
                    }
@@ -91,6 +91,18 @@ class UrReco(CustomRecognition):
             "unit_rcon",
             context.tasker.controller.post_screencap().wait().get(),
             pipeline_override=unit_rcon,
+        )
+
+        # Trick vscode extension
+        empty_rcon = {"empty_rcon":
+                       {"recognition": "DirectHit"
+                        }
+                   }
+
+        context.run_recognition(
+            "empty_rcon",
+            argv.image,
+            pipeline_override=empty_rcon,
         )
 
         ship_count: int = 0
