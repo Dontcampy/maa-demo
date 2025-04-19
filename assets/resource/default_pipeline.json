@@ -1,0 +1,8 @@
+{
+    "Default": {
+        "timeout": 60000,
+        "on_error": [
+            "error_handler"
+        ]
+    }
+}

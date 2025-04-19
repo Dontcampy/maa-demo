@@ -1,0 +1,55 @@
+{
+    "error_handler": {
+        "timeout": 20000,
+        "next": [
+            "error_handler_is_connection_error"
+        ],
+        "on_error": [
+            "restart_handler_stop_app"
+        ]
+    },
+    "error_handler_is_connection_error": {
+        "timeout": 20000,
+        "recognition": "TemplateMatch",
+        "template": "error_581_140_119_37__531_90_219_137.png",
+        "roi": [
+            581,
+            140,
+            119,
+            37
+        ],
+        "next": [
+            "error_handler_return_home"
+        ],
+        "on_error": []
+    },
+    "error_handler_return_home": {
+        "timeout": 20000,
+        "recognition": "TemplateMatch",
+        "template": "return_home_581_540_113_51__531_490_213_151.png",
+        "action": "Click",
+        "post_delay": 5000,
+        "next": [
+            "press_start_menu"
+        ],
+        "on_error": []
+    },
+    "restart_handler_stop_app": {
+        "action": "StopApp",
+        "package": "com.bandainamcoent.gget_WW",
+        "post_delay": 2000,
+        "next": [
+            "restart_handler_start_app"
+        ],
+        "on_error": []
+    },
+    "restart_handler_start_app": {
+        "action": "StartApp",
+        "package": "com.bandainamcoent.gget_WW",
+        "post_delay": 10000,
+        "next": [
+            "press_start_menu"
+        ],
+        "on_error": []
+    }
+}
