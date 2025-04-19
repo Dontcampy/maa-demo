@@ -291,26 +291,42 @@
             "close_starter_duty"
         ]
     },
-    "get_all_starter_duty": {
-        "recognition": "OCR",
-        "expected": "全部领取",
-        "action": "Click",
-        "next": [
-            "confirm_get_all_starter_duty"
-        ]
-    },
-    "confirm_get_all_starter_duty": {
-        "recognition": "OCR",
-        "expected": "OK",
-        "action": "Click",
-        "next": [
-            "close_starter_duty"
-        ]
-    },
     "close_starter_duty": {
         "recognition": "OCR",
         "expected": "关闭",
         "action": "Click",
+        "post_wait_freezes": 2000,
+        "next": [
+            "wait_tomato",
+            "open_gift"
+        ]
+    },
+    "wait_tomato": {
+        "recognition": "TemplateMatch",
+        "template": "tomato_16_22_1242_581__0_0_1280_681.png",
+        "roi": [
+            16,
+            22,
+            1242,
+            581
+        ],
+        "action": "DoNothing",
+        "next": [
+            "close_tomato"
+        ]
+    },
+    "close_tomato": {
+        "recognition": "OCR",
+        "expected": "关闭",
+        "roi": [
+            611,
+            649,
+            60,
+            33
+        ],
+        "pre_wait_freezes": 1000,
+        "action": "Click",
+        "post_wait_freezes": 1000,
         "next": [
             "open_gift"
         ]
@@ -324,37 +340,7 @@
             38,
             23
         ],
-        "action": "Click",
-        "next": [
-            "close_gift_announcement",
-            "get_all_gifts"
-        ]
-    },
-    "close_gift_announcement": {
-        "recognition": "OCR",
-        "expected": "关闭",
-        "roi": [
-            609,
-            646,
-            63,
-            35
-        ],
         "pre_wait_freezes": 1000,
-        "action": "Click",
-        "next": [
-            "open_gift_2",
-            "get_all_gifts"
-        ]
-    },
-    "open_gift_2": {
-        "recognition": "OCR",
-        "expected": "礼物",
-        "roi": [
-            58,
-            395,
-            38,
-            23
-        ],
         "action": "Click",
         "next": [
             "get_all_gifts"
@@ -529,6 +515,7 @@
         ],
         "pre_wait_freezes": 1000,
         "action": "Click",
+        "post_wait_freezes": 2000,
         "next": [
             "close_storage_help_1",
             "enter_unit_filter"

@@ -49,7 +49,7 @@ class UrReco(CustomRecognition):
         ship_rcon = {"ship_rcon":
                        {"recognition": "TemplateMatch",
                         "template": "card/feature/ship.png",
-                        "threshold":0.85,
+                        "threshold":0.7,
                         "roi": [219, 88, 1014, 470]
                         }
                    }
@@ -82,7 +82,7 @@ class UrReco(CustomRecognition):
         unit_rcon = {"unit_rcon":
                        {"recognition": "TemplateMatch",
                         "template": "card/feature/unit.png",
-                        "threshold":0.8,
+                        "threshold":0.7,
                         "roi": [219, 88, 1014, 470]
                         }
                    }
