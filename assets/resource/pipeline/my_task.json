@@ -429,10 +429,10 @@
         ],
         "action": "Click",
         "next": [
-            "gacha"
+            "10_gacha"
         ]
     },
-    "gacha": {
+    "10_gacha": {
         "recognition": "OCR",
         "expected": "补给10次",
         "roi": [
@@ -443,10 +443,10 @@
         ],
         "action": "Click",
         "next": [
-            "confirm_gacha"
+            "confirm_10_gacha"
         ]
     },
-    "confirm_gacha": {
+    "confirm_10_gacha": {
         "recognition": "OCR",
         "expected": "机体补给",
         "roi": [
@@ -472,11 +472,11 @@
         "action": "Click",
         "next": [
             "skip_gacha_anime",
-            "continue_gacha",
+            "continue_10_gacha",
             "stop_gacha"
         ]
     },
-    "continue_gacha": {
+    "continue_10_gacha": {
         "recognition": "OCR",
         "expected": "补给1次",
         "roi": [
@@ -487,7 +487,7 @@
         ],
         "action": "Click",
         "next": [
-            "confirm_gacha"
+            "confirm_10_gacha"
         ]
     },
     "stop_gacha": {
@@ -500,6 +500,181 @@
             28
         ],
         "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "back_to_gacha"
+        ]
+    },
+    "back_to_gacha": {
+        "recognition": "OCR",
+        "expected": "机体补给",
+        "roi": [
+            25,
+            8,
+            178,
+            48
+        ],
+        "action": "DoNothing",
+        "next": [
+            "gacha_by_tickets",
+            "open_tickets"
+        ]
+    },
+    "gacha_by_tickets": {
+        "recognition": "OCR",
+        "expected": "使用票券补给",
+        "roi": [
+            795,
+            539,
+            145,
+            28
+        ],
+        "action": "Click",
+        "next": [
+            "enter_get_ticket"
+        ]
+    },
+    "open_tickets": {
+        "recognition": "TemplateMatch",
+        "template": "ticket_40_568_185_40__0_518_285_140.png",
+        "roi": [
+            40,
+            568,
+            185,
+            40
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "enter_tickets"
+        ]
+    },
+    "enter_tickets": {
+        "recognition": "OCR",
+        "expected": "机体补给券",
+        "roi": [
+            568,
+            45,
+            144,
+            36
+        ],
+        "action": "DoNothing",
+        "post_wait_freezes": 500,
+        "next": [
+            "get_ticket",
+            "close_tickets"
+        ]
+    },
+    "get_ticket": {
+        "recognition": "TemplateMatch",
+        "template": "get_ticket.png",
+        "threshold": 0.7,
+        "roi": [
+            1014,
+            408,
+            190,
+            78
+        ],
+        "action": "Click",
+        "next": [
+            "enter_get_ticket"
+        ]
+    },
+    "enter_get_ticket": {
+        "recognition": "OCR",
+        "expected": "确认机体补给",
+        "roi": [
+            552,
+            142,
+            176,
+            35
+        ],
+        "action": "DoNothing",
+        "next": [
+            "max_ticket"
+        ]
+    },
+    "max_ticket": {
+        "recognition": "TemplateMatch",
+        "template": "max_ticket1_877_427_52_38__827_377_152_138.png",
+        "roi": [
+            877,
+            427,
+            52,
+            38
+        ],
+        "action": "Click",
+        "next": [
+            "comfirm_get_ticket"
+        ]
+    },
+    "comfirm_get_ticket": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            705,
+            544,
+            122,
+            44
+        ],
+        "next": [
+            "skip_ticket_gacha_anime"
+        ]
+    },
+    "skip_ticket_gacha_anime": {
+        "recognition": "OCR",
+        "expected": "略过",
+        "roi": [
+            1144,
+            35,
+            54,
+            28
+        ],
+        "action": "Click",
+        "next": [
+            "skip_ticket_gacha_anime",
+            "clost_ticket_gacha"
+        ]
+    },
+    "clost_ticket_gacha": {
+        "recognition": "OCR",
+        "expected": "OK",
+        "roi": [
+            1123,
+            656,
+            44,
+            28
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "back_to_gacha"
+        ]
+    },
+    "close_tickets": {
+        "recognition": "OCR",
+        "expected": "关闭",
+        "roi": [
+            614,
+            645,
+            53,
+            37
+        ],
+        "action": "Click",
+        "next": [
+            "back_to_gacha_from_tickets"
+        ]
+    },
+    "back_to_gacha_from_tickets": {
+        "recognition": "OCR",
+        "expected": "机体补给",
+        "roi": [
+            25,
+            8,
+            178,
+            48
+        ],
+        "action": "DoNothing",
         "next": [
             "go_to_storage"
         ]
@@ -513,7 +688,6 @@
             47,
             31
         ],
-        "pre_wait_freezes": 1000,
         "action": "Click",
         "post_wait_freezes": 2000,
         "next": [
@@ -723,5 +897,16 @@
             470
         ],
         "green_mask": true
+    },
+    "test2": {
+        "recognition": "TemplateMatch",
+        "template": "get_ticket.png",
+        "threshold": 0.7,
+        "roi": [
+            1008,
+            105,
+            197,
+            555
+        ]
     }
 }
