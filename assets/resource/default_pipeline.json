@@ -1,6 +1,8 @@
 {
     "Default": {
         "timeout": 60000,
+        "pre_delay": 200,
+        "post_delay": 200,
         "on_error": [
             "error_handler"
         ]
