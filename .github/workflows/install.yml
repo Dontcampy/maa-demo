@@ -55,7 +55,7 @@ jobs:
     strategy:
       matrix:
         os: [win]
-        arch: [aarch64, x86_64]
+        arch: [x86_64]
       fail-fast: false
 
     steps:
